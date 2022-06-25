@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kor-7pixel</title>
+  <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
+  <script src="./build/index.js" type="module"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+
+      text-align: center;
+    }
+
+    #preview-input {
+      width: 80%;
+    }
+    #preview-canvas {
+      image-rendering: pixelated;
+      width: 38vmax;
+      aspect-ratio: 1 1;
+    }
+    #editor {
+      margin-left: 5vw;
+      width: 20vmin;
+      height: 20vmin;
+
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(7, 1fr);
+    }
+    #editor > .editor__block {
+      background-color: #aaa;
+    }
+    #editor > .editor__block.active {
+      background-color: #000;
+    }
+    #editor-output {
+      margin-left: 5vw;
+      text-align: left;
+    }
+    #preview-input {
+      height: 10vh;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="preview-input" type="text">
+작게 도트화된 한글 폰트입니다.
+⚀⚁⚂⚃⚄⚅
+긱갹건겯걀냠넙냣낭갖갗갘같갚낳낛낡낢낣낤낪낝낞낡낢낣낥낦낧
+0123456789.,?!@#$%^&*(){}[]<>+-_=:;'&#34;/
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㄲㄸㅃㅆㅉㅐㅒㅖㄳㄺㄻㄼㄽㅄㄵㄶㄺㄻㄼㄾㄿㅀ
+기니디리미비시이지치키티피히끼띠삐씨찌그느드르므브스으즈츠크트프흐끄뜨쁘쓰쯔가나다라마바사아자차카타파하까따빠싸짜갸냐댜랴먀뱌샤야쟈챠캬탸퍄햐꺄땨뺘쌰쨔거너더러머버서어저처커터퍼허꺼떠뻐써쩌겨녀뎌려며벼셔여져쳐켜텨펴혀껴뗘뼈쎠쪄구누두루무부수우주추쿠투푸후꾸뚜뿌쑤쭈규뉴듀류뮤뷰슈유쥬츄큐튜퓨휴뀨튜쀼쓔쮸고노도로모보소오조초코토포호꼬또뽀쏘쪼교뇨됴료묘뵤쇼요죠쵸쿄툐표효꾜뚀뾰쑈쬬
+</textarea>
+  <canvas id="preview-canvas"></canvas>
+  <div id="editor">
+    <span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span><span class="editor__block"></span>
+  </div>
+  <div id="editor-output">n</div>
+</body>
+</html>
