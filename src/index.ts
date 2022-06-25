@@ -3,6 +3,7 @@ import PixelCanvas from "./PixelCanvas.js";
 import parseExpression from "./parseExpression.js";
 
 const input = document.getElementById("preview-input") as HTMLInputElement;
+const monospace = document.getElementById("monospace-checkbox") as HTMLInputElement;
 const canvas = new PixelCanvas({
   width: 400,
   height: 400
@@ -27,6 +28,9 @@ input.addEventListener("keydown", () => {
 input.addEventListener("keyup", () => {
   drawPreview(input.value);
 });
+monospace.addEventListener("change", () => {
+  drawPreview(input.value);
+})
 
 function drawPreview(str: string) {
   const e = parseExpression(str);
@@ -44,28 +48,40 @@ function drawPreview(str: string) {
   canvas.beginFill();
   canvas.fillStyle = [0, 0, 0];
 
-  let lineNr = 0;
-  let charNr = 0;
+  let x = 0;
+  let y = 0;
+  const isMonospace = monospace.checked;
   for (const [char, matrix] of charPixels) {
     if (char === "\n") {
-      charNr = 0;
-      lineNr++;
+      x = 0;
+      y += 8;
       continue;
     }
-    const x = charNr*8;
-    const y = lineNr*8;
-    for (let dx = 0; dx < 7; dx++) {
+    const monospaceMatrixWidth = matrix[0].length;
+    const existLines: boolean[] = [];
+    for (let i = 0; i < monospaceMatrixWidth; i++) {
+      existLines[i] = false;
+      for (let j = 0; j < matrix.length; j++) {
+        if (matrix[j][i] > 0) existLines[i] = true;
+      }
+    }
+    const leftSpace = existLines.reduce((a, b, i) => a === i && b === false ? a + 1 : a, 0);
+    const rightSpace = [...existLines].reverse().reduce((a, b, i) => a === i && b === false ? a + 1 : a, 0);
+    const matrixWidth = isMonospace || (leftSpace === 7 && rightSpace === 7) ?
+      7 :
+      monospaceMatrixWidth - leftSpace - rightSpace;
+    if (x > WIDTH-matrixWidth) {
+      x = 0;
+      y += 8;
+    }
+    for (let dx = 0; dx < matrixWidth; dx++) {
       for (let dy = 0; dy < 7; dy++) {
-        if (matrix[dy][dx] > 0) {
+        if (matrix[dy][dx+leftSpace] > 0) {
           canvas.fillPixel(x+dx, y+dy);
         }
       }
     }
-    charNr++;
-    if (charNr*8 > WIDTH-8) {
-      charNr = 0;
-      lineNr++;
-    }
+    x += matrixWidth+1;
   }
   canvas.endFill();
 }
