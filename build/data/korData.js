@@ -609,8 +609,8 @@ function addData(shape, pos, alphabet, pixels) {
     addDatas(c2s, 3, 0, 4, 3, 3);
     addDatas(c3s, 3, 0, 4, 3, 3);
     addDatas(c5s, 3, 0, 4, 5, 3);
-    addDatas(duals, 4, 0, 4, 3, 3);
-    addDatas(duals, 5, 3, 4, 3, 3);
+    addDatas(duals, 3, 0, 4, 3, 3);
+    addDatas(duals, 4, 3, 4, 3, 3);
 })();
 // "c3h?v?c?", "c3h?v?c?c?": "c3h1v1c2", "c3h1v1c3", "c3h1v1c5", "c3h1v1c2c3", "c3h1v1c3c2", "c3h1v1c3c3", "c3h2v1c2", "c3h2v1c3", "c3h2v1c5", "c3h2v1c2c3", "c3h2v1c3c2", "c3h2v1c3c3", "c3h2v2c2", "c3h2v2c3", "c3h2v2c5", "c3h2v2c2c3", "c3h2v2c3c2", "c3h2v2c3c3", "c3h2v3c2", "c3h2v3c3", "c3h2v3c5", "c3h2v3c2c3", "c3h2v3c3c2", "c3h2v3c3c3"
 (() => {
@@ -662,8 +662,8 @@ function addData(shape, pos, alphabet, pixels) {
     addDatas(c2s, 3, 0, 4, 3, 3);
     addDatas(c3s, 3, 0, 4, 3, 3);
     addDatas(c5s, 3, 0, 4, 5, 3);
-    addDatas(duals, 4, 0, 4, 3, 3);
-    addDatas(duals, 5, 3, 4, 3, 3);
+    addDatas(duals, 3, 0, 4, 3, 3);
+    addDatas(duals, 4, 3, 4, 3, 3);
 })();
 // "c5h?v?c?", "c5h?v?c?c?": "c5h1v1c2", "c5h1v1c3", "c5h1v1c5", "c5h1v1c2c3", "c5h1v1c3c2", "c5h1v1c3c3", "c5h2v1c2", "c5h2v1c3", "c5h2v1c5", "c5h2v1c2c3", "c5h2v1c3c2", "c5h2v1c3c3", "c5h2v2c2", "c5h2v2c3", "c5h2v2c5", "c5h2v2c2c3", "c5h2v2c3c2", "c5h2v2c3c3", "c5h2v3c2", "c5h2v3c3", "c5h2v3c5", "c5h2v3c2c3", "c5h2v3c3c2", "c5h2v3c3c3"
 (() => {
@@ -715,8 +715,8 @@ function addData(shape, pos, alphabet, pixels) {
     addDatas(c2s, 3, 0, 4, 3, 3);
     addDatas(c3s, 3, 0, 4, 3, 3);
     addDatas(c5s, 3, 0, 4, 5, 3);
-    addDatas(duals, 4, 0, 4, 3, 3);
-    addDatas(duals, 5, 3, 4, 3, 3);
+    addDatas(duals, 3, 0, 4, 3, 3);
+    addDatas(duals, 4, 3, 4, 3, 3);
 })();
 console.log(data);
 export default data;
