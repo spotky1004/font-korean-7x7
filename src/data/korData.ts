@@ -6,8 +6,7 @@ type CharShape =
   `${ShapeTypes}${ShapeTypes}${ShapeTypes}${ShapeTypes}` |
   `${ShapeTypes}${ShapeTypes}${ShapeTypes}${ShapeTypes}${ShapeTypes}`;
 const vaildCharShapes = [
-  "c2", "c3", "c5", "v1", "v2", "v3", "h1", "h2",
-  "c2c3", "c3c2", "c3c3",
+  "c2", "c3", "c5", "v1", "v2", "v3", "h1", "h2", "c2c3", "c3c2", "c3c3",
   "c2v1", "c3v1", "c5v1", "c2h1", "c3h1", "c5h1",
   "c2v2", "c3v2", "c5v2", "c2h2", "c3h2", "c5h2",
   "c2v3", "c3v3", "c5v3",
@@ -46,7 +45,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   );
 }
 
-// Kor Alphabets
+// "c?", "v?", "c?c?": Kor Alphabets
 (()=> {
   addData("c2", 0, "ㄱ", ["1_2", "2_2", "3_2", "4_2", "4_3", "4_4", "4_5", "4_6"]);
   addData("c2", 0, "ㄴ", ["1_2", "1_3", "1_4", "1_5", "1_6", "2_6", "3_6", "4_6"]);
@@ -98,7 +97,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c3c3", 1, "ㅎ", ["5_2", "4_3", "5_3", "6_3", "5_4", "4_5", "6_5", "5_6"]);
 })();
 
-// "c2v1", "c3v1", "c5v1"
+// "c?v1": "c2v1", "c3v1", "c5v1"
 (() => {
   addData("c2v1", 0, "ㄱ", ["1_1", "2_1", "3_1", "4_1", "4_2", "4_3", "4_4", "4_5", "4_6", "4_7"]);
   addData("c2v1", 0, "ㄴ", ["1_1", "1_2", "1_3", "1_4", "1_5", "1_6", "1_7", "2_7", "3_7", "4_7"]);
@@ -124,7 +123,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5v1", 1, "ㅣ", ["7_1", "7_2", "7_3", "7_4", "7_5", "7_6", "7_7"]);
 })();
 
-// "c2h1", "c3h1", "c5h1"
+// "c?h1": "c2h1", "c3h1", "c5h1"
 (() => {
   addData("c2h1", 0, "ㄱ", ["2_1", "3_1", "4_1", "5_1", "6_1", "6_2", "6_3", "6_4"]);
   addData("c2h1", 0, "ㄴ", ["2_1", "2_2", "2_3", "2_4", "3_4", "4_4", "5_4", "6_4"]);
@@ -150,7 +149,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5h1", 1, "ㅡ", ["1_7", "2_7", "3_7", "4_7", "5_7", "6_7", "7_7"]);
 })();
 
-// "c2v2", "c3v2", "c5v2"
+// "c?v2": "c2v2", "c3v2", "c5v2"
 (() => {
   addData("c2v2", 0, "ㄱ", ["1_1", "2_1", "3_1", "4_1", "4_2", "4_3", "4_4", "4_5", "4_6", "4_7"]);
   addData("c2v2", 0, "ㄴ", ["1_1", "1_2", "1_3", "1_4", "1_5", "1_6", "1_7", "2_7", "3_7", "4_7"]);
@@ -185,7 +184,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5v2", 1, "ㅕ", ["7_1", "7_2", "6_3", "7_3", "7_4", "6_5", "7_5", "7_6", "7_7"]);
 })();
 
-// "c2h2", "c3h2", "c5v2"
+// "c?h2": "c2h2", "c3h2", "c5v2"
 (() => {
   addData("c2h2", 0, "ㄱ", ["2_1", "3_1", "4_1", "5_1", "6_1", "6_2", "6_3", "6_4"]);
   addData("c2h2", 0, "ㄴ", ["2_1", "2_2", "2_3", "2_4", "3_4", "4_4", "5_4", "6_4"]);
@@ -220,7 +219,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5h2", 1, "ㅛ", ["3_6", "5_6", "1_7", "2_7", "3_7", "4_7", "5_7", "6_7", "7_7"]);
 })();
 
-// "c2v3", "c3v3", "c5v3",
+// "c?v3": "c2v3", "c3v3", "c5v3",
 (() => {
   addData("c2v3", 0, "ㄱ", ["1_1", "2_1", "3_1", "3_2", "3_3", "3_4", "3_5", "3_6", "3_7"]);
   addData("c2v3", 0, "ㄴ", ["1_1", "1_2", "1_3", "1_4", "1_5", "1_6", "1_7", "2_7", "3_7"]);
@@ -255,7 +254,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5v3", 1, "ㅒ", ["5_1", "7_1", "5_2", "7_2", "5_3", "6_3", "7_3", "5_4", "7_4", "5_5", "6_5", "7_5", "5_6", "7_6", "5_7", "7_7"]);
 })();
 
-// "c2h1v1", "c2h2v1", "c2h2v2", "c2h2v3", "c3h1v1", "c3h2v1", "c3h2v2", "c3h2v3", "c5h1v1", "c5h2v1", "c5h2v2", "c5h2v3"
+// "c?h?v?": "c2h1v1", "c2h2v1", "c2h2v2", "c2h2v3", "c3h1v1", "c3h2v1", "c3h2v2", "c3h2v3", "c5h1v1", "c5h2v1", "c5h2v2", "c5h2v3"
 (() => {
   addData("c2h1v1", 0, "ㄱ", ["1_1", "2_1", "3_1", "4_1", "5_1", "5_2", "5_3", "5_4", "4_5"]);
   addData("c2h2v1", 0, "ㄱ", ["1_1", "2_1", "3_1", "4_1", "5_1", "5_2", "5_3", "5_4"]);
@@ -371,7 +370,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c5h2v3", 2, "ㅔ", ["6_1", "7_1", "6_2", "7_2", "5_3", "6_3", "7_3", "6_4", "7_4", "6_5", "7_5", "6_6", "7_6", "6_7", "7_7"]);
 })();
 
-// "c2v1c2", "c2v1c3", "c2v1c2c3", "c2v1c3c2", "c2v1c3c3", "c2v2c2", "c2v2c3", "c2v2c2c3", "c2v2c3c2", "c2v2c3c3", "c2v3c2", "c2v3c3", "c2v3c2c3", "c2v3c3c2", "c2v3c3c3"
+// "c2v?c?", "c2v?c?c?": "c2v1c2", "c2v1c3", "c2v1c2c3", "c2v1c3c2", "c2v1c3c3", "c2v2c2", "c2v2c3", "c2v2c2c3", "c2v2c3c2", "c2v2c3c3", "c2v3c2", "c2v3c3", "c2v3c2c3", "c2v3c3c2", "c2v3c3c3"
 (() => {
   addData("c2v1c2", 0, "ㄱ", ["1_1", "2_1", "3_1", "3_2", "3_3"]);
   addData("c2v1c3", 0, "ㄱ", ["1_1", "2_1", "3_1", "3_2"]);
@@ -543,15 +542,15 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addData("c2v3c3c3", 3, "ㅎ", ["6_4", "4_5", "5_5", "6_5", "4_6", "6_6", "5_7"]);
 })();
 
-// "c3v1c2", "c3v1c3", "c3v1c2c3", "c3v1c3c2", "c3v1c3c3", "c3v2c2", "c3v2c3", "c3v2c2c3", "c3v2c3c2", "c3v2c3c3", "c3v3c2", "c3v3c3", "c3v3c2c3", "c3v3c3c2", "c3v3c3c3"
+// "c3v?c?", "c3v?c?c?": "c3v1c2", "c3v1c3", "c3v1c2c3", "c3v1c3c2", "c3v1c3c3", "c3v2c2", "c3v2c3", "c3v2c2c3", "c3v2c3c2", "c3v2c3c3", "c3v3c2", "c3v3c3", "c3v3c2c3", "c3v3c3c2", "c3v3c3c3"
 
-// "c5v1c2", "c5v1c3", "c5v1c2c3", "c5v1c3c2", "c5v1c3c3", "c5v2c2", "c5v2c3", "c5v2c2c3", "c5v2c3c2", "c5v2c3c3", "c5v3c2", "c5v3c3", "c5v3c2c3", "c5v3c3c2", "c5v3c3c3"
+// "c5v?c?", "c5v?c?c?": "c5v1c2", "c5v1c3", "c5v1c2c3", "c5v1c3c2", "c5v1c3c3", "c5v2c2", "c5v2c3", "c5v2c2c3", "c5v2c3c2", "c5v2c3c3", "c5v3c2", "c5v3c3", "c5v3c2c3", "c5v3c3c2", "c5v3c3c3"
 
-// "c2h1c2", "c2h1c3", "c2h1c2c3", "c2h1c3c2", "c2h1c3c3", "c2h2c2", "c2h2c3", "c2h2c2c3", "c2h2c3c2", "c2h2c3c3"
+// "c2h?c?", "c2h?c?c?": "c2h1c2", "c2h1c3", "c2h1c2c3", "c2h1c3c2", "c2h1c3c3", "c2h2c2", "c2h2c3", "c2h2c2c3", "c2h2c3c2", "c2h2c3c3"
 
-// "c3h1c2", "c3h1c3", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"
+// "c3h?c?", "c3h?c?c?": "c3h1c2", "c3h1c3", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"
 
-// "c5h1c2", "c5h1c3", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"
+// "c5h?c?", "c5h?c?c?": "c5h1c2", "c5h1c3", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"
 
 console.log(data);
 export default data;
