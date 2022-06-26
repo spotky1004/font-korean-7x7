@@ -14,7 +14,7 @@ const vaildCharShapes = [
   "c3v1c2", "c3v1c3", "c3v1c5", "c3v1c2c3", "c3v1c3c2", "c3v1c3c3", "c3v2c2", "c3v2c3", "c3v2c5", "c3v2c2c3", "c3v2c3c2", "c3v2c3c3", "c3v3c2", "c3v3c3", "c3v3c5", "c3v3c2c3", "c3v3c3c2", "c3v3c3c3",
   "c5v1c2", "c5v1c3", "c5v1c5", "c5v1c2c3", "c5v1c3c2", "c5v1c3c3", "c5v2c2", "c5v2c3", "c5v2c5", "c5v2c2c3", "c5v2c3c2", "c5v2c3c3", "c5v3c2", "c5v3c3", "c5v3c5", "c5v3c2c3", "c5v3c3c2", "c5v3c3c3",
   "c2h1c2", "c2h1c3", "c2h1c5", "c2h1c2c3", "c2h1c3c2", "c2h1c3c3", "c2h2c2", "c2h2c5", "c2h2c3", "c2h2c2c3", "c2h2c3c2", "c2h2c3c3",
-  "c3h1c2", "c3h1c3", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3",
+  "c3h1c2", "c3h1c3", "c3h1c5", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c5", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3",
   "c5h1c2", "c5h1c3", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3",
 ] as const;
 type VaildCharShapes = Extract<
@@ -361,7 +361,7 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   addAlphabetData("ㅗ", 6, 2, ["3_1", "1_2", "2_2", "3_2", "4_2", "5_2", "6_2"]);
   addAlphabetData("ㅗ", 7, 2, ["4_1", "1_2", "2_2", "3_2", "4_2", "5_2", "6_2", "7_2"]);
   // ㅛ
-  addAlphabetData("ㅛ", 3, 2, ["1_1", "2_1", "1_2", "2_2", "3_2"]);
+  addAlphabetData("ㅛ", 3, 2, ["2_1", "3_1", "1_2", "2_2", "3_2"]);
   addAlphabetData("ㅛ", 4, 2, ["1_1", "3_1", "1_2", "2_2", "3_2", "4_2"]);
   addAlphabetData("ㅛ", 5, 2, ["2_1", "4_1", "1_2", "2_2", "3_2", "4_2", "5_2"]);
   addAlphabetData("ㅛ", 6, 2, ["2_1", "4_1", "1_2", "2_2", "3_2", "4_2", "5_2", "6_2"]);
@@ -593,6 +593,32 @@ function addData(shape: VaildCharShapes, pos: number, alphabet: KoreanAlphabet, 
   );
   addDatas(
     ["c2h1c2c3", "c2h1c3c2", "c2h1c3c3", "c2h2c2c3", "c2h2c3c2", "c2h2c3c3"],
+    3, 3, 4, 3, 3
+  );
+})();
+
+// "c3h?c?", "c3h?c?c?": "c3h1c2", "c3h1c3", "c3h1c5", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c5", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"
+(() => {
+  addDatas(
+    [
+      "c3h1c2", "c3h2c2", "c3h1c3", "c3h2c3", "c3h1c5", "c3h2c5",
+      "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"
+    ],
+    0, 1, 0, 3, 3
+  );
+
+  addDatas(["c3h1c2", "c3h1c3", "c3h1c5", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3"], 1, 4, 2, 3, 1);
+  addDatas(["c3h2c2", "c3h2c2", "c3h1c2c3", "c3h2c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"], 1, 4, 2, 3, 2);
+
+  addDatas(["c3h1c2", "c3h2c2"], 2, 1, 4, 5, 3);
+  addDatas(["c3h1c3", "c3h2c3"], 2, 1, 4, 5, 3);
+  addDatas(["c3h1c5", "c3h2c5"], 2, 1, 4, 5, 3);
+  addDatas(
+    ["c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"],
+    2, 0, 4, 3, 3
+  );
+  addDatas(
+    ["c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"],
     3, 3, 4, 3, 3
   );
 })();
