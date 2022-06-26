@@ -8,7 +8,7 @@ const vaildCharShapes = [
     "c5v1c2", "c5v1c3", "c5v1c5", "c5v1c2c3", "c5v1c3c2", "c5v1c3c3", "c5v2c2", "c5v2c3", "c5v2c5", "c5v2c2c3", "c5v2c3c2", "c5v2c3c3", "c5v3c2", "c5v3c3", "c5v3c5", "c5v3c2c3", "c5v3c3c2", "c5v3c3c3",
     "c2h1c2", "c2h1c3", "c2h1c5", "c2h1c2c3", "c2h1c3c2", "c2h1c3c3", "c2h2c2", "c2h2c5", "c2h2c3", "c2h2c2c3", "c2h2c3c2", "c2h2c3c3",
     "c3h1c2", "c3h1c3", "c3h1c5", "c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2", "c3h2c3", "c3h2c5", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3",
-    "c5h1c2", "c5h1c3", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3",
+    "c5h1c2", "c5h1c3", "c5h1c5", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c5", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3",
 ];
 const koreanAlphabets = [
     "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
@@ -534,6 +534,20 @@ function addData(shape, pos, alphabet, pixels) {
     addDatas(["c3h1c5", "c3h2c5"], 2, 1, 4, 5, 3);
     addDatas(["c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"], 2, 0, 4, 3, 3);
     addDatas(["c3h1c2c3", "c3h1c3c2", "c3h1c3c3", "c3h2c2c3", "c3h2c3c2", "c3h2c3c3"], 3, 3, 4, 3, 3);
+})();
+// "c5h?c?", "c5h?c?c?": "c5h1c2", "c5h1c3", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"
+(() => {
+    addDatas([
+        "c5h1c2", "c5h2c2", "c5h1c3", "c5h2c3", "c5h1c5", "c5h2c5",
+        "c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"
+    ], 0, 1, 0, 4, 3);
+    addDatas(["c5h1c2", "c5h1c3", "c5h1c5", "c5h1c2c3", "c5h1c3c2", "c5h1c3c3"], 1, 4, 2, 3, 1);
+    addDatas(["c5h2c2", "c5h2c2", "c5h1c2c3", "c5h2c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"], 1, 4, 2, 3, 2);
+    addDatas(["c5h1c2", "c5h2c2"], 2, 1, 4, 5, 3);
+    addDatas(["c5h1c3", "c5h2c3"], 2, 1, 4, 5, 3);
+    addDatas(["c5h1c5", "c5h2c5"], 2, 1, 4, 5, 3);
+    addDatas(["c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"], 2, 0, 4, 3, 3);
+    addDatas(["c5h1c2c3", "c5h1c3c2", "c5h1c3c3", "c5h2c2c3", "c5h2c3c2", "c5h2c3c3"], 3, 3, 4, 3, 3);
 })();
 console.log(data);
 export default data;
